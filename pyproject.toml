@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cifar10-resnet-lab"
+version = "0.1.0"
+description = "A reproducible image-classification pipeline with a compact residual CNN, deterministic train/validation split, and held-out test evaluation."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=1.26",
+  "torch>=2.2",
+  "torchvision>=0.17",
+]
+
+[project.scripts]
+train-cifar10-resnet-lab = "cifar10_lab.train:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
